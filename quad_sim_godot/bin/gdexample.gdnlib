@@ -1,0 +1,18 @@
+[general]
+
+singleton=false
+load_once=true
+symbol_prefix="godot_"
+reloadable=false
+
+[entry]
+
+OSX.64="res://bin/osx/libquad_sim.dylib"
+Windows.64="res://bin/win64/libquad_godot_c++.dll"
+X11.64="res://bin/x11/libquad_godot_c++.so"
+
+[dependencies]
+
+OSX.64=[  ]
+Windows.64=[  ]
+X11.64=[  ]
