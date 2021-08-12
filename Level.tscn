@@ -40,7 +40,7 @@ transform = Transform( 3.9775, 0, 0, 0, 0.994375, 0, 0, 0, 3.9775, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="floor"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87869, 3.95188, -1.43877 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87869, 7.50582, -1.43877 )
 use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )

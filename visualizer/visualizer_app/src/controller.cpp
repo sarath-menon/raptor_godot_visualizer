@@ -54,7 +54,10 @@ void mocap_quadcopterSubscriber::SubListener::on_data_available(
 Controller::Controller(){};
 Controller::~Controller(){};
 
-void Controller::_init() {}
+void Controller::_init() {
+  subscriber::mocap_quadcopterSubscriber mysub;
+  mysub.init();
+}
 
 void godot::Controller::_register_methods() {
   register_method((char *)"_process", &Controller::_process);
@@ -69,74 +72,34 @@ void godot::Controller::_process() {
 }
 
 void godot::Controller::UpdateMotionFromInput() {
+  std::cout << "Ok ryt";
   position = Vector3(0, 0, 0);
   Input *input = Input::get_singleton();
 
-  if (input->is_action_pressed("ui_up") &&
-      input->is_action_pressed("ui_down")) {
-  }
+  if (subscriber::new_data == true) {
+    // std::cout << "Position      :" << subscriber::position[0] << '\t'
+    //           << subscriber::position[1] << '\t' << subscriber::position[2]
+    //           << std::endl;
 
-  else if (input->is_action_pressed("ui_up")) {
-    position.z = speed;
-    std::cout << "ok";
-  }
+    // std::cout << "Orientation:" << subscriber::orientation[0] << '\t'
+    //           << subscriber::orientation[1] << '\t'
+    //           << subscriber::orientation[2] << '\t'
+    //           << subscriber::orientation[3] << std::endl
+    //           << std::endl;
 
-  else if (input->is_action_pressed("ui_down")) {
-    position.z = -speed;
-    std::cout << "ok";
-  }
+    ///////////////////////////////////////////////////////////////////////////
+    // Do godot processing here
+    position.z += 5;
 
-  else {
-    position.z *= friction_coeff;
-  }
+    ////////////////////////////////////////////////////////////
 
-  if (input->is_action_pressed("ui_left") &&
-      input->is_action_pressed("ui_right")) {
-  }
-
-  else if (input->is_action_pressed("ui_left")) {
-    position.x = -speed;
-  }
-
-  else if (input->is_action_pressed("ui_right")) {
-    position.x = speed;
+    // Set flag to false after data has been processed
+    subscriber::new_data = false;
   }
 
   else {
-    position.x *= friction_coeff;
+    std::cout << "No new data" << std::endl;
   }
-
-  if (input->is_action_pressed("up") && input->is_action_pressed("down")) {
-  }
-
-  else if (input->is_action_pressed("up")) {
-    position.y = speed;
-  }
-
-  else if (input->is_action_pressed("down")) {
-    position.y = -speed;
-  }
-
-  else {
-    position.y *= friction_coeff;
-  }
-
-  if (input->is_action_pressed("roll_left")) {
-    orientation.z += 1;
-  }
-
-  else if (input->is_action_pressed("roll_right")) {
-    orientation.z -= 1;
-  }
-
-  if (input->is_action_pressed("pitch_front")) {
-    orientation.x += 1;
-  }
-
-  else if (input->is_action_pressed("pitch_back")) {
-    orientation.x -= 1;
-  }
-  if (input->is_action_pressed("yaw")) {
-    orientation.y += 1;
-  }
+  // Sleep for 500 microseconds
+  usleep(500);
 }
