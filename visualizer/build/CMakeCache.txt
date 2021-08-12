@@ -141,6 +141,21 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=MyLibrary
 
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=1.0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
+
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
 
@@ -222,6 +237,18 @@ MyLibrary_SOURCE_DIR:STATIC=/Users/sarathmenon/Desktop/eth_soft/code/visualizer/
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/Users/sarathmenon/.pyenv/shims/python
 
+//The directory containing a CMake configuration file for TinyXML2.
+TinyXML2_DIR:PATH=/usr/local/lib/cmake/tinyxml2
+
+//The directory containing a CMake configuration file for fastcdr.
+fastcdr_DIR:PATH=/usr/local/lib/cmake/fastcdr
+
+//The directory containing a CMake configuration file for fastrtps.
+fastrtps_DIR:PATH=/usr/local/share/fastrtps/cmake
+
+//The directory containing a CMake configuration file for foonathan_memory.
+foonathan_memory_DIR:PATH=/usr/local/lib/foonathan_memory/cmake
+
 //Value Computed by CMake
 godot-cpp_BINARY_DIR:STATIC=/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/godot-cpp
 
@@ -230,6 +257,15 @@ godot-cpp_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 godot-cpp_SOURCE_DIR:STATIC=/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/godot-cpp
+
+//Value Computed by CMake
+mocap_subscriber_BINARY_DIR:STATIC=/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/external/mocap_subscriber
+
+//Value Computed by CMake
+mocap_subscriber_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+mocap_subscriber_SOURCE_DIR:STATIC=/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/external/mocap_subscriber
 
 
 ########################
@@ -324,7 +360,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

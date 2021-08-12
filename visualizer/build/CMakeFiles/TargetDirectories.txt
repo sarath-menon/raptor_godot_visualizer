@@ -6,3 +6,7 @@
 /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/visualizer_app/CMakeFiles/rebuild_cache.dir
 /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/visualizer_app/CMakeFiles/edit_cache.dir
 /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/visualizer_app/CMakeFiles/MyLibrary.dir
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/external/mocap_subscriber/CMakeFiles/rebuild_cache.dir
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/external/mocap_subscriber/CMakeFiles/edit_cache.dir
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/external/mocap_subscriber/CMakeFiles/vicon_comm_lib.dir
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/external/mocap_subscriber/CMakeFiles/msg_lib.dir
