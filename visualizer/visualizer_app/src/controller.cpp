@@ -51,9 +51,7 @@ void mocap_quadcopterSubscriber::SubListener::on_data_available(
 }
 } // namespace subscriber
 
-Controller::Controller(){
-
-};
+Controller::Controller() { mysub.init(); };
 Controller::~Controller(){};
 
 void Controller::_init() {}
@@ -72,9 +70,6 @@ void Controller::_process() {
 }
 
 void Controller::UpdateMotionFromInput() {
-
-  subscriber::mocap_quadcopterSubscriber mysub;
-  mysub.init();
 
   std::cout << "Ok ryt";
   position = Vector3(0, 0, 0);

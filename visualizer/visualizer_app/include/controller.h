@@ -5,6 +5,15 @@
 #include <Input.hpp>
 #include <KinematicBody.hpp>
 
+///////////////////////////////////////////////////////////////////////////
+
+// Fastdds headers
+#include "mocap_quadcopterPubSubTypes.h"
+#include "mocap_quadcopterSubscriber.h"
+#include <fastdds/dds/subscriber/DataReader.hpp>
+#include <fastdds/dds/subscriber/SampleInfo.hpp>
+/////////////////////////////////////////////////////////////////////////
+
 // namespace godot {
 class Controller : public godot::KinematicBody {
 private:
@@ -33,6 +42,9 @@ public:
 
   // Member functions
   void UpdateMotionFromInput();
+
+  // Fastdds subscriber
+  subscriber::mocap_quadcopterSubscriber mysub;
 };
 // } // namespace godot
 
