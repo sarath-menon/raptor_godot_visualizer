@@ -5,8 +5,8 @@
 #include <Input.hpp>
 #include <KinematicBody.hpp>
 
-namespace godot {
-class Controller : public KinematicBody {
+// namespace godot {
+class Controller : public godot::KinematicBody {
 private:
   // We need to register some information to Godot
   GODOT_CLASS(Controller, KinematicBody)
@@ -28,12 +28,12 @@ public:
   // Member fields
   float speed = 8;
   const float friction_coeff = 0.9;
-  Vector3 position = Vector3(0.0, 0.0, 0.0);
-  Vector3 orientation = Vector3(0.0, 0.0, 0.0);
+  godot::Vector3 position = godot::Vector3(0.0, 0.0, 0.0);
+  godot::Vector3 orientation = godot::Vector3(0.0, 0.0, 0.0);
 
   // Member functions
   void UpdateMotionFromInput();
 };
-} // namespace godot
+// } // namespace godot
 
 #endif // GDNATIVEEXPLORATION_CONTROLLER_H

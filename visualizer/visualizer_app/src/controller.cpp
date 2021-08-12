@@ -51,55 +51,63 @@ void mocap_quadcopterSubscriber::SubListener::on_data_available(
 }
 } // namespace subscriber
 
-Controller::Controller(){};
+Controller::Controller(){
+
+};
 Controller::~Controller(){};
 
-void Controller::_init() {
-  subscriber::mocap_quadcopterSubscriber mysub;
-  mysub.init();
-}
+void Controller::_init() {}
 
-void godot::Controller::_register_methods() {
+void Controller::_register_methods() {
   register_method((char *)"_process", &Controller::_process);
   register_method((char *)"UpdateMotionFromInput",
                   &Controller::UpdateMotionFromInput);
 }
 
-void godot::Controller::_process() {
+void Controller::_process() {
+
   UpdateMotionFromInput();
   move_and_slide(position);
   set_rotation_degrees(orientation);
 }
 
-void godot::Controller::UpdateMotionFromInput() {
+void Controller::UpdateMotionFromInput() {
+
+  subscriber::mocap_quadcopterSubscriber mysub;
+  mysub.init();
+
   std::cout << "Ok ryt";
   position = Vector3(0, 0, 0);
   Input *input = Input::get_singleton();
 
-  if (subscriber::new_data == true) {
-    // std::cout << "Position      :" << subscriber::position[0] << '\t'
-    //           << subscriber::position[1] << '\t' << subscriber::position[2]
-    //           << std::endl;
+  // position.z += 5;
 
-    // std::cout << "Orientation:" << subscriber::orientation[0] << '\t'
-    //           << subscriber::orientation[1] << '\t'
-    //           << subscriber::orientation[2] << '\t'
-    //           << subscriber::orientation[3] << std::endl
-    //           << std::endl;
+  // if (subscriber::new_data == true) {
+  // std::cout << "Position      :" << subscriber::position[0] << '\t'
+  //           << subscriber::position[1] << '\t' << subscriber::position[2]
+  //           << std::endl;
 
-    ///////////////////////////////////////////////////////////////////////////
-    // Do godot processing here
-    position.z += 5;
+  // std::cout << "Orientation:" << subscriber::orientation[0] << '\t'
+  //           << subscriber::orientation[1] << '\t'
+  //           << subscriber::orientation[2] << '\t'
+  //           << subscriber::orientation[3] << std::endl
+  //           << std::endl;
 
-    ////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////
+  // Do godot processing here
+  position.z += subscriber::orientation[3];
 
-    // Set flag to false after data has been processed
-    subscriber::new_data = false;
-  }
+  // position.z += 5;
 
-  else {
-    std::cout << "No new data" << std::endl;
-  }
+  ////////////////////////////////////////////////////////////
+
+  // Set flag to false after data has been processed
+  //   subscriber::new_data = false;
+  // }
+
+  // else {
+  //   std::cout << "No new data" << std::endl;
+  // }
   // Sleep for 500 microseconds
-  usleep(500);
+  usleep(50000);
 }
