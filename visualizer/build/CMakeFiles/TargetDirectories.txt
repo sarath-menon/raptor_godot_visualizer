@@ -1,0 +1,8 @@
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/CMakeFiles/rebuild_cache.dir
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/CMakeFiles/edit_cache.dir
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/godot-cpp/CMakeFiles/rebuild_cache.dir
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/godot-cpp/CMakeFiles/edit_cache.dir
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/godot-cpp/CMakeFiles/godot-cpp.dir
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/visualizer_app/CMakeFiles/rebuild_cache.dir
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/visualizer_app/CMakeFiles/edit_cache.dir
+/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/visualizer_app/CMakeFiles/MyLibrary.dir
