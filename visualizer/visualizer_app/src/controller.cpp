@@ -90,7 +90,10 @@ void Controller::UpdateMotionFromInput(float delta) {
     q.z = subscriber::orientation[2];
     q.w = subscriber::orientation[3];
 
-    angle = 2 * acos(q.w);
+    // angle = 2 * acos(q.w);
+    float norm = sqrt(q.x * q.x + q.y * q.y + q.z * q.z);
+    angle = 2 * atan2(norm, q.w);
+
     axis.x = q.x / sqrt(1 - q.w * q.w);
     axis.z = q.y / sqrt(1 - q.w * q.w);
     axis.y = q.z / sqrt(1 - q.w * q.w);
