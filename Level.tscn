@@ -29,7 +29,7 @@ transform = Transform( 3.9775, 0, 0, 0, 0.994375, 0, 0, 0, 3.9775, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="floor"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87869, 7.50582, -1.43877 )
+transform = Transform( 0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 1.87869, 9.19402, -1.43877 )
 use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
@@ -41,7 +41,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.98 )
 transform = Transform( 0.819151, -0.381314, 0.428475, 0, 0.747021, 0.6648, -0.573577, -0.544572, 0.611924, 10.75, 14.8, -8.77 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -1, -1.77636e-15, -8.74228e-08, -2.30096e-08, 0.964741, 0.2632, 8.43404e-08, 0.2632, -0.964741, 10.6583, 15.8853, -4.33065 )
+transform = Transform( -1, 9.05942e-14, -8.74228e-08, -2.30096e-08, 0.964741, 0.2632, 8.43404e-08, 0.2632, -0.964741, 10.6583, 25.9259, -17.7631 )
 
 [node name="Spatial" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 10, 20 )

@@ -72,19 +72,16 @@ void Controller::_process(float delta) {
 
 void Controller::UpdateMotionFromInput(float delta) {
 
-  position = Vector3(15, 10, 20);
+  position = Vector3(10, 10, 20);
 
   if (subscriber::new_data == true) {
 
     ///////////////////////////////////////////////////////////////////////////
     // Do godot processing here
 
-    // position.x = (subscriber::position[0] - subscriber::position_prev[0]) /
-    //              (delta * 1000);
-    // position.z = (subscriber::position[1] - subscriber::position_prev[1]) /
-    //              (delta * 1000);
-    // position.y = (subscriber::position[2] - subscriber::position_prev[2]) /
-    //              (delta * 1000);
+    position.x = subscriber::position[0] / 100;
+    position.z = subscriber::position[1] / 100;
+    position.y = subscriber::position[2] / 100;
 
     // subscriber::position_prev[0] = subscriber::position[0];
     // subscriber::position_prev[1] = subscriber::position[1];
