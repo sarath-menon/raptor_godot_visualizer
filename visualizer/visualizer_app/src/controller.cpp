@@ -1,5 +1,6 @@
 #include "controller.h"
 using namespace godot;
+#include <chrono>
 #include <cmath>
 
 ///////////////////////////////////////////////////////////////////////////
@@ -112,5 +113,5 @@ void Controller::UpdateMotionFromInput(float delta) {
   // q.get_euler();
 
   // Sleep for 500 microseconds
-  usleep(50000);
+  std::this_thread::sleep_for(std::chrono::milliseconds(50));
 }
