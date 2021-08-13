@@ -47,7 +47,7 @@ void mocap_quadcopterSubscriber::SubListener::on_data_available(
       latency = st.delay();
 
       // Sleep for 500 microseconds
-      usleep(500);
+      std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
   }
 }
@@ -106,12 +106,11 @@ void Controller::UpdateMotionFromInput(float delta) {
   }
 
   else {
-    std::cout << "No new data" << std::endl;
+    // std::cout << "No new data" << std::endl;
   }
 
   pose.set_origin(position);
-  // q.get_euler();
 
   // Sleep for 500 microseconds
-  std::this_thread::sleep_for(std::chrono::milliseconds(50));
+  std::this_thread::sleep_for(std::chrono::milliseconds(40));
 }
