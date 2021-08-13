@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "external/mocap_subscriber_outside_main",
+		"source" : "external/mocap_subscriber_outside_main"
+	}
+}

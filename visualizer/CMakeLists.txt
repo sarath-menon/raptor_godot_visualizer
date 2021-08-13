@@ -13,4 +13,4 @@ find_package(fastrtps REQUIRED)
 
 add_subdirectory(godot-cpp)
 add_subdirectory(visualizer_app)
-add_subdirectory(external/mocap_subscriber)
+add_subdirectory(external/mocap_subscriber_outside_main)

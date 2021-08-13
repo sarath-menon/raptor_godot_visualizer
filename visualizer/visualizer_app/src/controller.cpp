@@ -62,47 +62,37 @@ void Controller::_register_methods() {
                   &Controller::UpdateMotionFromInput);
 }
 
-void Controller::_process() {
+void Controller::_process(float delta) {
 
-  UpdateMotionFromInput();
+  UpdateMotionFromInput(delta);
   move_and_slide(position);
   set_rotation_degrees(orientation);
 }
 
-void Controller::UpdateMotionFromInput() {
+void Controller::UpdateMotionFromInput(float delta) {
 
-  std::cout << "Ok ryt";
   position = Vector3(0, 0, 0);
-  Input *input = Input::get_singleton();
 
-  // position.z += 5;
+  if (subscriber::new_data == true) {
 
-  // if (subscriber::new_data == true) {
-  // std::cout << "Position      :" << subscriber::position[0] << '\t'
-  //           << subscriber::position[1] << '\t' << subscriber::position[2]
-  //           << std::endl;
+    ///////////////////////////////////////////////////////////////////////////
+    // Do godot processing here
+    position.y = (subscriber::position[2] - subscriber::position_prev[2]) /
+                 (delta * 1000);
+    // position.y = subscriber::position[2] / 1000;
 
-  // std::cout << "Orientation:" << subscriber::orientation[0] << '\t'
-  //           << subscriber::orientation[1] << '\t'
-  //           << subscriber::orientation[2] << '\t'
-  //           << subscriber::orientation[3] << std::endl
-  //           << std::endl;
+    // position.y += 5;
 
-  ///////////////////////////////////////////////////////////////////////////
-  // Do godot processing here
-  position.z += subscriber::orientation[3];
+    subscriber::position_prev[2] = subscriber::position[2];
+    ////////////////////////////////////////////////////////////
 
-  // position.z += 5;
+    // Set flag to false after data has been processed
+    subscriber::new_data = false;
+  }
 
-  ////////////////////////////////////////////////////////////
-
-  // Set flag to false after data has been processed
-  //   subscriber::new_data = false;
-  // }
-
-  // else {
-  //   std::cout << "No new data" << std::endl;
-  // }
+  else {
+    std::cout << "No new data" << std::endl;
+  }
   // Sleep for 500 microseconds
   usleep(50000);
 }

@@ -32,16 +32,17 @@ public:
   // Initialize
   void _init();
   // Describe what happens in the simulation
-  void _process();
+  void _process(float delta);
 
   // Member fields
   float speed = 8;
   const float friction_coeff = 0.9;
   godot::Vector3 position = godot::Vector3(0.0, 0.0, 0.0);
+  // godot::Vector3 position_prev = godot::Vector3(0.0, 0.0, 0.0);
   godot::Vector3 orientation = godot::Vector3(0.0, 0.0, 0.0);
 
   // Member functions
-  void UpdateMotionFromInput();
+  void UpdateMotionFromInput(float delta);
 
   // Fastdds subscriber
   subscriber::mocap_quadcopterSubscriber mysub;
