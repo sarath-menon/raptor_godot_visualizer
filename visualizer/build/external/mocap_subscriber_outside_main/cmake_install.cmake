@@ -1,4 +1,4 @@
-# Install script for directory: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/external/mocap_subscriber_outside_main
+# Install script for directory: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/mocap_subscriber_outside_main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,10 +35,5 @@ endif()
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_new/visualizer/build/external/mocap_subscriber_outside_main/mocap_subscriber_app/cmake_install.cmake")
 endif()
 

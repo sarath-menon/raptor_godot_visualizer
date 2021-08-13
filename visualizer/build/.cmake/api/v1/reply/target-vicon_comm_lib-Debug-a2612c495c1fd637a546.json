@@ -1,0 +1,167 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "external/mocap_subscriber_outside_main/libvicon_comm_lib.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"external/mocap_subscriber_outside_main/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 38,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 44,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 49,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15"
+				},
+				{
+					"fragment" : "-std=c++2a"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "FOONATHAN_MEMORY=1"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "FOONATHAN_MEMORY_VERSION_MAJOR=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "FOONATHAN_MEMORY_VERSION_MINOR=6"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "FOONATHAN_MEMORY_VERSION_PATCH=2"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "TINYXML2_DEBUG"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "TINYXML2_IMPORT"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/mocap_subscriber_outside_main/include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/usr/local/include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/usr/local/include/foonathan_memory/comp"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/usr/local/include/foonathan_memory"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2
+			]
+		}
+	],
+	"id" : "vicon_comm_lib::@f4c798f1cca64a6ccc06",
+	"name" : "vicon_comm_lib",
+	"nameOnDisk" : "libvicon_comm_lib.a",
+	"paths" : 
+	{
+		"build" : "external/mocap_subscriber_outside_main",
+		"source" : "external/mocap_subscriber_outside_main"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/mocap_subscriber_outside_main/include/mocap_quadcopterPubSubTypes.cxx",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/mocap_subscriber_outside_main/include/mocap_quadcopterPublisher.cxx",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "external/mocap_subscriber_outside_main/include/mocap_quadcopterSubscriber.cxx",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

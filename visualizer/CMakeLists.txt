@@ -10,7 +10,5 @@ set(CMAKE_CXX_STANDARD 17) # Feel free to use whatever standard you want
 find_package(fastcdr REQUIRED)
 find_package(fastrtps REQUIRED)
 
-
-add_subdirectory(godot-cpp)
 add_subdirectory(visualizer_app)
-add_subdirectory(external/mocap_subscriber_outside_main)
+add_subdirectory(external)

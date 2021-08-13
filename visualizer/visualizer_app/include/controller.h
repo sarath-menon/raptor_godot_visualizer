@@ -15,10 +15,10 @@
 /////////////////////////////////////////////////////////////////////////
 
 // namespace godot {
-class Controller : public godot::KinematicBody {
+class Controller : public godot::Spatial {
 private:
   // We need to register some information to Godot
-  GODOT_CLASS(Controller, KinematicBody)
+  GODOT_CLASS(Controller, Spatial)
 public:
   // Controller() {}
   // ~Controller() {}
@@ -40,6 +40,8 @@ public:
   godot::Vector3 position = godot::Vector3(0.0, 0.0, 0.0);
   // godot::Vector3 position_prev = godot::Vector3(0.0, 0.0, 0.0);
   godot::Vector3 orientation = godot::Vector3(0.0, 0.0, 0.0);
+
+  godot::Transform pose;
 
   // Member functions
   void UpdateMotionFromInput(float delta);

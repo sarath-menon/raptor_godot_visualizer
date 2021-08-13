@@ -65,25 +65,30 @@ void Controller::_register_methods() {
 void Controller::_process(float delta) {
 
   UpdateMotionFromInput(delta);
-  move_and_slide(position);
-  set_rotation_degrees(orientation);
+  // move_and_slide(position);
+  // set_rotation_degrees(orientation);
+  set_global_transform(pose);
 }
 
 void Controller::UpdateMotionFromInput(float delta) {
 
-  position = Vector3(0, 0, 0);
+  position = Vector3(15, 10, 20);
 
   if (subscriber::new_data == true) {
 
     ///////////////////////////////////////////////////////////////////////////
     // Do godot processing here
-    position.y = (subscriber::position[2] - subscriber::position_prev[2]) /
-                 (delta * 1000);
-    // position.y = subscriber::position[2] / 1000;
 
-    // position.y += 5;
+    // position.x = (subscriber::position[0] - subscriber::position_prev[0]) /
+    //              (delta * 1000);
+    // position.z = (subscriber::position[1] - subscriber::position_prev[1]) /
+    //              (delta * 1000);
+    // position.y = (subscriber::position[2] - subscriber::position_prev[2]) /
+    //              (delta * 1000);
 
-    subscriber::position_prev[2] = subscriber::position[2];
+    // subscriber::position_prev[0] = subscriber::position[0];
+    // subscriber::position_prev[1] = subscriber::position[1];
+    // subscriber::position_prev[2] = subscriber::position[2];
     ////////////////////////////////////////////////////////////
 
     // Set flag to false after data has been processed
@@ -93,6 +98,8 @@ void Controller::UpdateMotionFromInput(float delta) {
   else {
     std::cout << "No new data" << std::endl;
   }
+
+  pose.set_origin(position);
   // Sleep for 500 microseconds
   usleep(50000);
 }
