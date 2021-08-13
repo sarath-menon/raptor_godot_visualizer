@@ -1,5 +1,6 @@
 #include "controller.h"
 using namespace godot;
+#include <cmath>
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -68,6 +69,7 @@ void Controller::_process(float delta) {
   // move_and_slide(position);
   // set_rotation_degrees(orientation);
   set_global_transform(pose);
+  global_rotate(axis, angle);
 }
 
 void Controller::UpdateMotionFromInput(float delta) {
@@ -83,9 +85,16 @@ void Controller::UpdateMotionFromInput(float delta) {
     position.z = subscriber::position[1] / 100;
     position.y = subscriber::position[2] / 100;
 
-    // subscriber::position_prev[0] = subscriber::position[0];
-    // subscriber::position_prev[1] = subscriber::position[1];
-    // subscriber::position_prev[2] = subscriber::position[2];
+    q.x = subscriber::orientation[0];
+    q.y = subscriber::orientation[1];
+    q.z = subscriber::orientation[2];
+    q.w = subscriber::orientation[3];
+
+    angle = 2 * acos(q.w);
+    axis.x = q.x / sqrt(1 - q.w * q.w);
+    axis.z = q.y / sqrt(1 - q.w * q.w);
+    axis.y = q.z / sqrt(1 - q.w * q.w);
+
     ////////////////////////////////////////////////////////////
 
     // Set flag to false after data has been processed
@@ -97,6 +106,8 @@ void Controller::UpdateMotionFromInput(float delta) {
   }
 
   pose.set_origin(position);
+  // q.get_euler();
+
   // Sleep for 500 microseconds
   usleep(50000);
 }
