@@ -1,6 +1,5 @@
 #include "controller.h"
 using namespace godot;
-#include <chrono>
 #include <cmath>
 
 ///////////////////////////////////////////////////////////////////////////
@@ -8,9 +7,9 @@ using namespace godot;
 // Fastdds headers
 #include "mocap_quadcopterPubSubTypes.h"
 #include "mocap_quadcopterSubscriber.h"
+#include <chrono>
 #include <fastdds/dds/subscriber/DataReader.hpp>
 #include <fastdds/dds/subscriber/SampleInfo.hpp>
-#include <unistd.h>
 /////////////////////////////////////////////////////////////////////////
 
 namespace subscriber {
@@ -47,7 +46,6 @@ void mocap_quadcopterSubscriber::SubListener::on_data_available(
       latency = st.delay();
 
       // Sleep for 500 microseconds
-      std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
   }
 }
@@ -56,7 +54,7 @@ void mocap_quadcopterSubscriber::SubListener::on_data_available(
 Controller::Controller() { mysub.init(); };
 Controller::~Controller(){};
 
-void Controller::_init() {}
+void Controller::_init() { position = Vector3(10, 10, 20); }
 
 void Controller::_register_methods() {
   register_method((char *)"_process", &Controller::_process);
@@ -75,8 +73,6 @@ void Controller::_process(float delta) {
 
 void Controller::UpdateMotionFromInput(float delta) {
 
-  position = Vector3(10, 10, 20);
-
   if (subscriber::new_data == true) {
 
     ///////////////////////////////////////////////////////////////////////////
@@ -91,8 +87,7 @@ void Controller::UpdateMotionFromInput(float delta) {
     q.z = subscriber::orientation[2];
     q.w = subscriber::orientation[3];
 
-    // angle = 2 * acos(q.w);
-    float norm = sqrt(q.x * q.x + q.y * q.y + q.z * q.z);
+    const float norm = sqrt(q.x * q.x + q.y * q.y + q.z * q.z);
     angle = 2 * atan2(norm, q.w);
 
     axis.x = q.x / sqrt(1 - q.w * q.w);
@@ -111,6 +106,6 @@ void Controller::UpdateMotionFromInput(float delta) {
 
   pose.set_origin(position);
 
-  // Sleep for 500 microseconds
-  std::this_thread::sleep_for(std::chrono::milliseconds(40));
+  // Sleep for 1 millisecond
+  std::this_thread::sleep_for(std::chrono::milliseconds(1));
 }
