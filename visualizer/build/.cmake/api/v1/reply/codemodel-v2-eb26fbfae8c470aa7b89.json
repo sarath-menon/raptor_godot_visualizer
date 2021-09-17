@@ -1,0 +1,176 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "visualizer_app",
+					"jsonFile" : "directory-visualizer_app-Debug-cf11d2780ba3f0dbc4b3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "visualizer_app",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "external",
+					"childIndexes" : 
+					[
+						3,
+						4
+					],
+					"jsonFile" : "directory-external-Debug-8482bb5b6989bf536f1d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "external"
+				},
+				{
+					"build" : "external/godot-cpp",
+					"jsonFile" : "directory-external.godot-cpp-Debug-0e521600597e6c374b56.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "external/godot-cpp",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "external/fastdds_mocap",
+					"jsonFile" : "directory-external.fastdds_mocap-Debug-a6bed619165904122ad1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "external/fastdds_mocap",
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "MyLibrary",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "godot-cpp",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "mocap_subscriber",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "MyLibrary::@86f146ce85de9061dd3d",
+					"jsonFile" : "target-MyLibrary-Debug-c674ef37ecd760eea180.json",
+					"name" : "MyLibrary",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "godot-cpp::@edc5de950ba6ea8d7448",
+					"jsonFile" : "target-godot-cpp-Debug-d05730746e7981df702a.json",
+					"name" : "godot-cpp",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "mocap_fastdds_lib::@eacefeedabf14f17e6af",
+					"jsonFile" : "target-mocap_fastdds_lib-Debug-1670291cae3f1e121834.json",
+					"name" : "mocap_fastdds_lib",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "msg_lib::@eacefeedabf14f17e6af",
+					"jsonFile" : "target-msg_lib-Debug-94787187341bb5c40534.json",
+					"name" : "msg_lib",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build",
+		"source" : "/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

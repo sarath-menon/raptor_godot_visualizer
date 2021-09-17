@@ -12,4 +12,4 @@ find_package(fastrtps REQUIRED)
 
 
 add_subdirectory(godot-cpp)
-add_subdirectory(mocap_subscriber_outside_main)
+add_subdirectory(fastdds_mocap)
