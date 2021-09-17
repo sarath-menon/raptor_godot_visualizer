@@ -60,7 +60,7 @@ rule CXX_STATIC_LIBRARY_LINKER__godot-cpp_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__vicon_comm_lib_Debug
+rule CXX_COMPILER__mocap_fastdds_lib_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/bin/clang++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -70,7 +70,7 @@ rule CXX_COMPILER__vicon_comm_lib_Debug
 #############################################
 # Rule for linking CXX static library.
 
-rule CXX_STATIC_LIBRARY_LINKER__vicon_comm_lib_Debug
+rule CXX_STATIC_LIBRARY_LINKER__mocap_fastdds_lib_Debug
   command = $PRE_LINK && /usr/local/Cellar/cmake/3.21.2/bin/cmake -E rm -f $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && /usr/local/Cellar/cmake/3.21.2/bin/cmake -E touch $TARGET_FILE && $POST_BUILD
   description = Linking CXX static library $TARGET_FILE
   restat = $RESTAT

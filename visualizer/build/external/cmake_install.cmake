@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/mocap_subscriber_outside_main/cmake_install.cmake")
+  include("/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/fastdds_mocap/cmake_install.cmake")
 endif()
 

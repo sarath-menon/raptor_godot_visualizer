@@ -10,7 +10,7 @@ godot-cpp
 fastcdr 
 fastrtps
 msg_lib
-vicon_comm_lib 
+mocap_fastdds_lib
 )    
 
 target_include_directories(MyLibrary PUBLIC include)                           

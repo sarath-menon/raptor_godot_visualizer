@@ -98,13 +98,13 @@ build visualizer_app/edit_cache: phony visualizer_app/CMakeFiles/edit_cache.util
 #############################################
 # Order-only phony target for MyLibrary
 
-build cmake_object_order_depends_target_MyLibrary: phony || cmake_object_order_depends_target_godot-cpp cmake_object_order_depends_target_msg_lib cmake_object_order_depends_target_vicon_comm_lib
+build cmake_object_order_depends_target_MyLibrary: phony || cmake_object_order_depends_target_godot-cpp cmake_object_order_depends_target_mocap_fastdds_lib cmake_object_order_depends_target_msg_lib
 
 build visualizer_app/CMakeFiles/MyLibrary.dir/src/godot_library.cpp.o: CXX_COMPILER__MyLibrary_Debug /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/visualizer_app/src/godot_library.cpp || cmake_object_order_depends_target_MyLibrary
   DEFINES = -DFOONATHAN_MEMORY=1 -DFOONATHAN_MEMORY_VERSION_MAJOR=0 -DFOONATHAN_MEMORY_VERSION_MINOR=6 -DFOONATHAN_MEMORY_VERSION_PATCH=2 -DMyLibrary_EXPORTS -DTINYXML2_DEBUG -DTINYXML2_IMPORT
   DEP_FILE = visualizer_app/CMakeFiles/MyLibrary.dir/src/godot_library.cpp.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -fPIC -std=gnu++17
-  INCLUDES = -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/visualizer_app/include -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/include -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/include/core -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/godot-cpp/include/gen -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/mocap_subscriber_outside_main/include -isystem /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/godot-headers -isystem /usr/local/include -isystem /usr/local/include/foonathan_memory/comp -isystem /usr/local/include/foonathan_memory
+  INCLUDES = -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/visualizer_app/include -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/include -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/include/core -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/godot-cpp/include/gen -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/fastdds_mocap/include -isystem /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/godot-headers -isystem /usr/local/include -isystem /usr/local/include/foonathan_memory/comp -isystem /usr/local/include/foonathan_memory
   OBJECT_DIR = visualizer_app/CMakeFiles/MyLibrary.dir
   OBJECT_FILE_DIR = visualizer_app/CMakeFiles/MyLibrary.dir/src
 
@@ -112,7 +112,7 @@ build visualizer_app/CMakeFiles/MyLibrary.dir/src/controller.cpp.o: CXX_COMPILER
   DEFINES = -DFOONATHAN_MEMORY=1 -DFOONATHAN_MEMORY_VERSION_MAJOR=0 -DFOONATHAN_MEMORY_VERSION_MINOR=6 -DFOONATHAN_MEMORY_VERSION_PATCH=2 -DMyLibrary_EXPORTS -DTINYXML2_DEBUG -DTINYXML2_IMPORT
   DEP_FILE = visualizer_app/CMakeFiles/MyLibrary.dir/src/controller.cpp.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -fPIC -std=gnu++17
-  INCLUDES = -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/visualizer_app/include -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/include -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/include/core -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/godot-cpp/include/gen -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/mocap_subscriber_outside_main/include -isystem /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/godot-headers -isystem /usr/local/include -isystem /usr/local/include/foonathan_memory/comp -isystem /usr/local/include/foonathan_memory
+  INCLUDES = -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/visualizer_app/include -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/include -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/include/core -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/godot-cpp/include/gen -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/fastdds_mocap/include -isystem /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/godot-cpp/godot-headers -isystem /usr/local/include -isystem /usr/local/include/foonathan_memory/comp -isystem /usr/local/include/foonathan_memory
   OBJECT_DIR = visualizer_app/CMakeFiles/MyLibrary.dir
   OBJECT_FILE_DIR = visualizer_app/CMakeFiles/MyLibrary.dir/src
 
@@ -124,11 +124,11 @@ build visualizer_app/CMakeFiles/MyLibrary.dir/src/controller.cpp.o: CXX_COMPILER
 #############################################
 # Link the shared library visualizer_app/libMyLibrary.dylib
 
-build visualizer_app/libMyLibrary.dylib: CXX_SHARED_LIBRARY_LINKER__MyLibrary_Debug visualizer_app/CMakeFiles/MyLibrary.dir/src/godot_library.cpp.o visualizer_app/CMakeFiles/MyLibrary.dir/src/controller.cpp.o | ../bin/libgodot-cpp.darwin.debug.64.a external/mocap_subscriber_outside_main/libmsg_lib.a external/mocap_subscriber_outside_main/libvicon_comm_lib.a /usr/local/lib/libfastrtps.2.3.0.dylib /usr/local/lib/libfastcdr.1.0.20.dylib /usr/local/lib/libfoonathan_memory-0.6.2.a /usr/local/lib/libtinyxml2.9.0.0.dylib || ../bin/libgodot-cpp.darwin.debug.64.a external/mocap_subscriber_outside_main/libmsg_lib.a external/mocap_subscriber_outside_main/libvicon_comm_lib.a
+build visualizer_app/libMyLibrary.dylib: CXX_SHARED_LIBRARY_LINKER__MyLibrary_Debug visualizer_app/CMakeFiles/MyLibrary.dir/src/godot_library.cpp.o visualizer_app/CMakeFiles/MyLibrary.dir/src/controller.cpp.o | ../bin/libgodot-cpp.darwin.debug.64.a external/fastdds_mocap/libmsg_lib.a external/fastdds_mocap/libmocap_fastdds_lib.a /usr/local/lib/libfastrtps.2.3.4.dylib /usr/local/lib/libfastcdr.1.0.21.dylib /usr/local/lib/libfoonathan_memory-0.6.2.a /usr/local/lib/libtinyxml2.9.0.0.dylib || ../bin/libgodot-cpp.darwin.debug.64.a external/fastdds_mocap/libmocap_fastdds_lib.a external/fastdds_mocap/libmsg_lib.a
   ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15
   INSTALLNAME_DIR = @rpath/
   LANGUAGE_COMPILE_FLAGS = -g
-  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  ../bin/libgodot-cpp.darwin.debug.64.a  external/mocap_subscriber_outside_main/libmsg_lib.a  external/mocap_subscriber_outside_main/libvicon_comm_lib.a  /usr/local/lib/libfastrtps.2.3.0.dylib  /usr/local/lib/libfastcdr.1.0.20.dylib  /usr/local/lib/libfoonathan_memory-0.6.2.a  /usr/local/lib/libtinyxml2.9.0.0.dylib
+  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  ../bin/libgodot-cpp.darwin.debug.64.a  external/fastdds_mocap/libmsg_lib.a  external/fastdds_mocap/libmocap_fastdds_lib.a  /usr/local/lib/libfastrtps.2.3.4.dylib  /usr/local/lib/libfastcdr.1.0.21.dylib  /usr/local/lib/libfoonathan_memory-0.6.2.a  /usr/local/lib/libtinyxml2.9.0.0.dylib
   OBJECT_DIR = visualizer_app/CMakeFiles/MyLibrary.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -5461,74 +5461,74 @@ build external/godot-cpp/include/gen/GlobalConstants.hpp external/godot-cpp/incl
 #############################################
 # Utility command for rebuild_cache
 
-build external/mocap_subscriber_outside_main/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/mocap_subscriber_outside_main && /usr/local/Cellar/cmake/3.21.2/bin/cmake --regenerate-during-build -S/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer -B/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build
+build external/fastdds_mocap/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/fastdds_mocap && /usr/local/Cellar/cmake/3.21.2/bin/cmake --regenerate-during-build -S/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer -B/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build external/mocap_subscriber_outside_main/rebuild_cache: phony external/mocap_subscriber_outside_main/CMakeFiles/rebuild_cache.util
+build external/fastdds_mocap/rebuild_cache: phony external/fastdds_mocap/CMakeFiles/rebuild_cache.util
 
 
 #############################################
 # Utility command for edit_cache
 
-build external/mocap_subscriber_outside_main/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/mocap_subscriber_outside_main && /usr/local/Cellar/cmake/3.21.2/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+build external/fastdds_mocap/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/fastdds_mocap && /usr/local/Cellar/cmake/3.21.2/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build external/mocap_subscriber_outside_main/edit_cache: phony external/mocap_subscriber_outside_main/CMakeFiles/edit_cache.util
+build external/fastdds_mocap/edit_cache: phony external/fastdds_mocap/CMakeFiles/edit_cache.util
 
 # =============================================================================
-# Object build statements for STATIC_LIBRARY target vicon_comm_lib
+# Object build statements for STATIC_LIBRARY target mocap_fastdds_lib
 
 
 #############################################
-# Order-only phony target for vicon_comm_lib
+# Order-only phony target for mocap_fastdds_lib
 
-build cmake_object_order_depends_target_vicon_comm_lib: phony || external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir
+build cmake_object_order_depends_target_mocap_fastdds_lib: phony || external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir
 
-build external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include/mocap_quadcopterPubSubTypes.cxx.o: CXX_COMPILER__vicon_comm_lib_Debug /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/mocap_subscriber_outside_main/include/mocap_quadcopterPubSubTypes.cxx || cmake_object_order_depends_target_vicon_comm_lib
+build external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include/mocap_quadcopterPubSubTypes.cxx.o: CXX_COMPILER__mocap_fastdds_lib_Debug /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/fastdds_mocap/include/mocap_quadcopterPubSubTypes.cxx || cmake_object_order_depends_target_mocap_fastdds_lib
   DEFINES = -DFOONATHAN_MEMORY=1 -DFOONATHAN_MEMORY_VERSION_MAJOR=0 -DFOONATHAN_MEMORY_VERSION_MINOR=6 -DFOONATHAN_MEMORY_VERSION_PATCH=2 -DTINYXML2_DEBUG -DTINYXML2_IMPORT
-  DEP_FILE = external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include/mocap_quadcopterPubSubTypes.cxx.o.d
+  DEP_FILE = external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include/mocap_quadcopterPubSubTypes.cxx.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=c++2a
-  INCLUDES = -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/mocap_subscriber_outside_main/include -isystem /usr/local/include -isystem /usr/local/include/foonathan_memory/comp -isystem /usr/local/include/foonathan_memory
-  OBJECT_DIR = external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir
-  OBJECT_FILE_DIR = external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include
+  INCLUDES = -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/fastdds_mocap/include -isystem /usr/local/include -isystem /usr/local/include/foonathan_memory/comp -isystem /usr/local/include/foonathan_memory
+  OBJECT_DIR = external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir
+  OBJECT_FILE_DIR = external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include
 
-build external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include/mocap_quadcopterPublisher.cxx.o: CXX_COMPILER__vicon_comm_lib_Debug /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/mocap_subscriber_outside_main/include/mocap_quadcopterPublisher.cxx || cmake_object_order_depends_target_vicon_comm_lib
+build external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include/mocap_quadcopterPublisher.cxx.o: CXX_COMPILER__mocap_fastdds_lib_Debug /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/fastdds_mocap/include/mocap_quadcopterPublisher.cxx || cmake_object_order_depends_target_mocap_fastdds_lib
   DEFINES = -DFOONATHAN_MEMORY=1 -DFOONATHAN_MEMORY_VERSION_MAJOR=0 -DFOONATHAN_MEMORY_VERSION_MINOR=6 -DFOONATHAN_MEMORY_VERSION_PATCH=2 -DTINYXML2_DEBUG -DTINYXML2_IMPORT
-  DEP_FILE = external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include/mocap_quadcopterPublisher.cxx.o.d
+  DEP_FILE = external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include/mocap_quadcopterPublisher.cxx.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=c++2a
-  INCLUDES = -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/mocap_subscriber_outside_main/include -isystem /usr/local/include -isystem /usr/local/include/foonathan_memory/comp -isystem /usr/local/include/foonathan_memory
-  OBJECT_DIR = external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir
-  OBJECT_FILE_DIR = external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include
+  INCLUDES = -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/fastdds_mocap/include -isystem /usr/local/include -isystem /usr/local/include/foonathan_memory/comp -isystem /usr/local/include/foonathan_memory
+  OBJECT_DIR = external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir
+  OBJECT_FILE_DIR = external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include
 
-build external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include/mocap_quadcopterSubscriber.cxx.o: CXX_COMPILER__vicon_comm_lib_Debug /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/mocap_subscriber_outside_main/include/mocap_quadcopterSubscriber.cxx || cmake_object_order_depends_target_vicon_comm_lib
+build external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include/mocap_quadcopterSubscriber.cxx.o: CXX_COMPILER__mocap_fastdds_lib_Debug /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/fastdds_mocap/include/mocap_quadcopterSubscriber.cxx || cmake_object_order_depends_target_mocap_fastdds_lib
   DEFINES = -DFOONATHAN_MEMORY=1 -DFOONATHAN_MEMORY_VERSION_MAJOR=0 -DFOONATHAN_MEMORY_VERSION_MINOR=6 -DFOONATHAN_MEMORY_VERSION_PATCH=2 -DTINYXML2_DEBUG -DTINYXML2_IMPORT
-  DEP_FILE = external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include/mocap_quadcopterSubscriber.cxx.o.d
+  DEP_FILE = external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include/mocap_quadcopterSubscriber.cxx.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=c++2a
-  INCLUDES = -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/mocap_subscriber_outside_main/include -isystem /usr/local/include -isystem /usr/local/include/foonathan_memory/comp -isystem /usr/local/include/foonathan_memory
-  OBJECT_DIR = external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir
-  OBJECT_FILE_DIR = external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include
+  INCLUDES = -I/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/fastdds_mocap/include -isystem /usr/local/include -isystem /usr/local/include/foonathan_memory/comp -isystem /usr/local/include/foonathan_memory
+  OBJECT_DIR = external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir
+  OBJECT_FILE_DIR = external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include
 
 
 # =============================================================================
-# Link build statements for STATIC_LIBRARY target vicon_comm_lib
+# Link build statements for STATIC_LIBRARY target mocap_fastdds_lib
 
 
 #############################################
-# Link the static library external/mocap_subscriber_outside_main/libvicon_comm_lib.a
+# Link the static library external/fastdds_mocap/libmocap_fastdds_lib.a
 
-build external/mocap_subscriber_outside_main/libvicon_comm_lib.a: CXX_STATIC_LIBRARY_LINKER__vicon_comm_lib_Debug external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include/mocap_quadcopterPubSubTypes.cxx.o external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include/mocap_quadcopterPublisher.cxx.o external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir/include/mocap_quadcopterSubscriber.cxx.o || /usr/local/lib/libfastrtps.2.3.0.dylib /usr/local/lib/libfastcdr.1.0.20.dylib /usr/local/lib/libtinyxml2.9.0.0.dylib
+build external/fastdds_mocap/libmocap_fastdds_lib.a: CXX_STATIC_LIBRARY_LINKER__mocap_fastdds_lib_Debug external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include/mocap_quadcopterPubSubTypes.cxx.o external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include/mocap_quadcopterPublisher.cxx.o external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir/include/mocap_quadcopterSubscriber.cxx.o || /usr/local/lib/libfastrtps.2.3.4.dylib /usr/local/lib/libfastcdr.1.0.21.dylib /usr/local/lib/libtinyxml2.9.0.0.dylib
   ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = external/mocap_subscriber_outside_main/CMakeFiles/vicon_comm_lib.dir
+  OBJECT_DIR = external/fastdds_mocap/CMakeFiles/mocap_fastdds_lib.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = external/mocap_subscriber_outside_main/libvicon_comm_lib.a
-  TARGET_PDB = vicon_comm_lib.a.dbg
+  TARGET_FILE = external/fastdds_mocap/libmocap_fastdds_lib.a
+  TARGET_PDB = mocap_fastdds_lib.a.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target msg_lib
@@ -5537,15 +5537,15 @@ build external/mocap_subscriber_outside_main/libvicon_comm_lib.a: CXX_STATIC_LIB
 #############################################
 # Order-only phony target for msg_lib
 
-build cmake_object_order_depends_target_msg_lib: phony || external/mocap_subscriber_outside_main/CMakeFiles/msg_lib.dir
+build cmake_object_order_depends_target_msg_lib: phony || external/fastdds_mocap/CMakeFiles/msg_lib.dir
 
-build external/mocap_subscriber_outside_main/CMakeFiles/msg_lib.dir/include/mocap_quadcopter.cxx.o: CXX_COMPILER__msg_lib_Debug /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/mocap_subscriber_outside_main/include/mocap_quadcopter.cxx || cmake_object_order_depends_target_msg_lib
+build external/fastdds_mocap/CMakeFiles/msg_lib.dir/include/mocap_quadcopter.cxx.o: CXX_COMPILER__msg_lib_Debug /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/fastdds_mocap/include/mocap_quadcopter.cxx || cmake_object_order_depends_target_msg_lib
   DEFINES = -DFOONATHAN_MEMORY=1 -DFOONATHAN_MEMORY_VERSION_MAJOR=0 -DFOONATHAN_MEMORY_VERSION_MINOR=6 -DFOONATHAN_MEMORY_VERSION_PATCH=2 -DTINYXML2_DEBUG -DTINYXML2_IMPORT
-  DEP_FILE = external/mocap_subscriber_outside_main/CMakeFiles/msg_lib.dir/include/mocap_quadcopter.cxx.o.d
+  DEP_FILE = external/fastdds_mocap/CMakeFiles/msg_lib.dir/include/mocap_quadcopter.cxx.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=c++2a
   INCLUDES = -isystem /usr/local/include -isystem /usr/local/include/foonathan_memory/comp -isystem /usr/local/include/foonathan_memory
-  OBJECT_DIR = external/mocap_subscriber_outside_main/CMakeFiles/msg_lib.dir
-  OBJECT_FILE_DIR = external/mocap_subscriber_outside_main/CMakeFiles/msg_lib.dir/include
+  OBJECT_DIR = external/fastdds_mocap/CMakeFiles/msg_lib.dir
+  OBJECT_FILE_DIR = external/fastdds_mocap/CMakeFiles/msg_lib.dir/include
 
 
 # =============================================================================
@@ -5553,15 +5553,15 @@ build external/mocap_subscriber_outside_main/CMakeFiles/msg_lib.dir/include/moca
 
 
 #############################################
-# Link the static library external/mocap_subscriber_outside_main/libmsg_lib.a
+# Link the static library external/fastdds_mocap/libmsg_lib.a
 
-build external/mocap_subscriber_outside_main/libmsg_lib.a: CXX_STATIC_LIBRARY_LINKER__msg_lib_Debug external/mocap_subscriber_outside_main/CMakeFiles/msg_lib.dir/include/mocap_quadcopter.cxx.o || /usr/local/lib/libfastrtps.2.3.0.dylib /usr/local/lib/libfastcdr.1.0.20.dylib /usr/local/lib/libtinyxml2.9.0.0.dylib
+build external/fastdds_mocap/libmsg_lib.a: CXX_STATIC_LIBRARY_LINKER__msg_lib_Debug external/fastdds_mocap/CMakeFiles/msg_lib.dir/include/mocap_quadcopter.cxx.o || /usr/local/lib/libfastrtps.2.3.4.dylib /usr/local/lib/libfastcdr.1.0.21.dylib /usr/local/lib/libtinyxml2.9.0.0.dylib
   ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = external/mocap_subscriber_outside_main/CMakeFiles/msg_lib.dir
+  OBJECT_DIR = external/fastdds_mocap/CMakeFiles/msg_lib.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = external/mocap_subscriber_outside_main/libmsg_lib.a
+  TARGET_FILE = external/fastdds_mocap/libmsg_lib.a
   TARGET_PDB = msg_lib.a.dbg
 
 # =============================================================================
@@ -5575,13 +5575,13 @@ build libMyLibrary.dylib: phony visualizer_app/libMyLibrary.dylib
 
 build libgodot-cpp.darwin.debug.64.a: phony ../bin/libgodot-cpp.darwin.debug.64.a
 
-build libmsg_lib.a: phony external/mocap_subscriber_outside_main/libmsg_lib.a
+build libmocap_fastdds_lib.a: phony external/fastdds_mocap/libmocap_fastdds_lib.a
 
-build libvicon_comm_lib.a: phony external/mocap_subscriber_outside_main/libvicon_comm_lib.a
+build libmsg_lib.a: phony external/fastdds_mocap/libmsg_lib.a
 
-build msg_lib: phony external/mocap_subscriber_outside_main/libmsg_lib.a
+build mocap_fastdds_lib: phony external/fastdds_mocap/libmocap_fastdds_lib.a
 
-build vicon_comm_lib: phony external/mocap_subscriber_outside_main/libvicon_comm_lib.a
+build msg_lib: phony external/fastdds_mocap/libmsg_lib.a
 
 # =============================================================================
 # Folder targets.
@@ -5598,7 +5598,14 @@ build all: phony visualizer_app/all external/all
 #############################################
 # Folder: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external
 
-build external/all: phony external/godot-cpp/all external/mocap_subscriber_outside_main/all
+build external/all: phony external/godot-cpp/all external/fastdds_mocap/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/fastdds_mocap
+
+build external/fastdds_mocap/all: phony external/fastdds_mocap/libmocap_fastdds_lib.a external/fastdds_mocap/libmsg_lib.a
 
 # =============================================================================
 
@@ -5606,13 +5613,6 @@ build external/all: phony external/godot-cpp/all external/mocap_subscriber_outsi
 # Folder: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/godot-cpp
 
 build external/godot-cpp/all: phony ../bin/libgodot-cpp.darwin.debug.64.a
-
-# =============================================================================
-
-#############################################
-# Folder: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/mocap_subscriber_outside_main
-
-build external/mocap_subscriber_outside_main/all: phony external/mocap_subscriber_outside_main/libvicon_comm_lib.a external/mocap_subscriber_outside_main/libmsg_lib.a
 
 # =============================================================================
 
@@ -5628,14 +5628,14 @@ build visualizer_app/all: phony visualizer_app/libMyLibrary.dylib
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../external/CMakeLists.txt ../external/godot-cpp/CMakeLists.txt ../external/mocap_subscriber_outside_main/CMakeLists.txt ../visualizer_app/CMakeLists.txt /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCXXInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/AppleClang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/Clang.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPackageMessage.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPythonInterp.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/fastcdr/fastcdr-config-version.cmake /usr/local/lib/cmake/fastcdr/fastcdr-config.cmake /usr/local/lib/cmake/fastcdr/fastcdr-targets-release.cmake /usr/local/lib/cmake/fastcdr/fastcdr-targets.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-config-version.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-config.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-shared-targets-release.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-shared-targets.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config-noconfig.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config-version.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config.cmake /usr/local/share/fastrtps/cmake/fast-discovery-server-targets-release.cmake /usr/local/share/fastrtps/cmake/fast-discovery-server-targets.cmake /usr/local/share/fastrtps/cmake/fastrtps-config-version.cmake /usr/local/share/fastrtps/cmake/fastrtps-config.cmake /usr/local/share/fastrtps/cmake/fastrtps-targets-release.cmake /usr/local/share/fastrtps/cmake/fastrtps-targets.cmake CMakeCache.txt CMakeFiles/3.21.2/CMakeCCompiler.cmake CMakeFiles/3.21.2/CMakeCXXCompiler.cmake CMakeFiles/3.21.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../external/CMakeLists.txt ../external/fastdds_mocap/CMakeLists.txt ../external/godot-cpp/CMakeLists.txt ../visualizer_app/CMakeLists.txt /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCXXInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/AppleClang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/Clang.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPackageMessage.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPythonInterp.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/fastcdr/fastcdr-config-version.cmake /usr/local/lib/cmake/fastcdr/fastcdr-config.cmake /usr/local/lib/cmake/fastcdr/fastcdr-dynamic-targets-release.cmake /usr/local/lib/cmake/fastcdr/fastcdr-dynamic-targets.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-config-version.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-config.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-shared-targets-release.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-shared-targets.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config-noconfig.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config-version.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config.cmake /usr/local/share/fastrtps/cmake/fast-discovery-server-targets-release.cmake /usr/local/share/fastrtps/cmake/fast-discovery-server-targets.cmake /usr/local/share/fastrtps/cmake/fastrtps-config-version.cmake /usr/local/share/fastrtps/cmake/fastrtps-config.cmake /usr/local/share/fastrtps/cmake/fastrtps-dynamic-targets-release.cmake /usr/local/share/fastrtps/cmake/fastrtps-dynamic-targets.cmake CMakeCache.txt CMakeFiles/3.21.2/CMakeCCompiler.cmake CMakeFiles/3.21.2/CMakeCXXCompiler.cmake CMakeFiles/3.21.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../external/CMakeLists.txt ../external/godot-cpp/CMakeLists.txt ../external/mocap_subscriber_outside_main/CMakeLists.txt ../visualizer_app/CMakeLists.txt /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCXXInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/AppleClang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/Clang.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPackageMessage.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPythonInterp.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/fastcdr/fastcdr-config-version.cmake /usr/local/lib/cmake/fastcdr/fastcdr-config.cmake /usr/local/lib/cmake/fastcdr/fastcdr-targets-release.cmake /usr/local/lib/cmake/fastcdr/fastcdr-targets.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-config-version.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-config.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-shared-targets-release.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-shared-targets.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config-noconfig.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config-version.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config.cmake /usr/local/share/fastrtps/cmake/fast-discovery-server-targets-release.cmake /usr/local/share/fastrtps/cmake/fast-discovery-server-targets.cmake /usr/local/share/fastrtps/cmake/fastrtps-config-version.cmake /usr/local/share/fastrtps/cmake/fastrtps-config.cmake /usr/local/share/fastrtps/cmake/fastrtps-targets-release.cmake /usr/local/share/fastrtps/cmake/fastrtps-targets.cmake CMakeCache.txt CMakeFiles/3.21.2/CMakeCCompiler.cmake CMakeFiles/3.21.2/CMakeCXXCompiler.cmake CMakeFiles/3.21.2/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../external/CMakeLists.txt ../external/fastdds_mocap/CMakeLists.txt ../external/godot-cpp/CMakeLists.txt ../visualizer_app/CMakeLists.txt /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCXXInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/AppleClang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/Clang.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPackageMessage.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/FindPythonInterp.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang-C.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Apple-Clang.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.21.2/share/cmake/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/fastcdr/fastcdr-config-version.cmake /usr/local/lib/cmake/fastcdr/fastcdr-config.cmake /usr/local/lib/cmake/fastcdr/fastcdr-dynamic-targets-release.cmake /usr/local/lib/cmake/fastcdr/fastcdr-dynamic-targets.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-config-version.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-config.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-shared-targets-release.cmake /usr/local/lib/cmake/tinyxml2/tinyxml2-shared-targets.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config-noconfig.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config-version.cmake /usr/local/lib/foonathan_memory/cmake/foonathan_memory-config.cmake /usr/local/share/fastrtps/cmake/fast-discovery-server-targets-release.cmake /usr/local/share/fastrtps/cmake/fast-discovery-server-targets.cmake /usr/local/share/fastrtps/cmake/fastrtps-config-version.cmake /usr/local/share/fastrtps/cmake/fastrtps-config.cmake /usr/local/share/fastrtps/cmake/fastrtps-dynamic-targets-release.cmake /usr/local/share/fastrtps/cmake/fastrtps-dynamic-targets.cmake CMakeCache.txt CMakeFiles/3.21.2/CMakeCCompiler.cmake CMakeFiles/3.21.2/CMakeCXXCompiler.cmake CMakeFiles/3.21.2/CMakeSystem.cmake: phony
 
 
 #############################################
