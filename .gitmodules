@@ -1,0 +1,3 @@
+[submodule "visualizer/external/fastdds_mocap"]
+	path = visualizer/external/fastdds_mocap
+	url = https://github.com/sarath-menon/fastdds_mocap.git
