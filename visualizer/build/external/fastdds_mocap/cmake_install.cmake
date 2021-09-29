@@ -1,4 +1,4 @@
-# Install script for directory: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external/fastdds_mocap
+# Install script for directory: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/godot_visualizer/visualizer/external/fastdds_mocap
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

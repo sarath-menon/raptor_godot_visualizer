@@ -1,4 +1,4 @@
-# Install script for directory: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/external
+# Install script for directory: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/godot_visualizer/visualizer/external
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/godot-cpp/cmake_install.cmake")
+  include("/Users/sarathmenon/Desktop/eth_soft/code/visualizer/godot_visualizer/visualizer/build/external/godot-cpp/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/fastdds_mocap/cmake_install.cmake")
+  include("/Users/sarathmenon/Desktop/eth_soft/code/visualizer/godot_visualizer/visualizer/build/external/fastdds_mocap/cmake_install.cmake")
 endif()
 

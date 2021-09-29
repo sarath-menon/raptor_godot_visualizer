@@ -1,4 +1,4 @@
-# Install script for directory: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer
+# Install script for directory: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/godot_visualizer/visualizer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,12 +39,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/visualizer_app/cmake_install.cmake")
+  include("/Users/sarathmenon/Desktop/eth_soft/code/visualizer/godot_visualizer/visualizer/build/visualizer_app/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/external/cmake_install.cmake")
+  include("/Users/sarathmenon/Desktop/eth_soft/code/visualizer/godot_visualizer/visualizer/build/external/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/sarathmenon/Desktop/eth_soft/code/visualizer/godot_visualizer/visualizer/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

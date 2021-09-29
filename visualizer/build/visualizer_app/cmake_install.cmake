@@ -1,4 +1,4 @@
-# Install script for directory: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/quad_sim_dev/visualizer/visualizer_app
+# Install script for directory: /Users/sarathmenon/Desktop/eth_soft/code/visualizer/godot_visualizer/visualizer/visualizer_app
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
