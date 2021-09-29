@@ -1,0 +1,6 @@
+[submodule "visualizer/external/godot-cpp"]
+	path = visualizer/external/godot-cpp
+	url = https://github.com/godotengine/godot-cpp.git
+[submodule "visualizer/external/fastdds_mocap"]
+	path = visualizer/external/fastdds_mocap
+	url = https://github.com/sarath-menon/fastdds_mocap.git
