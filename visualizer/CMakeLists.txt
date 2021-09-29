@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.16)
 project(MyLibrary)
 
 set(CMAKE_CXX_STANDARD 17) # Feel free to use whatever standard you want
