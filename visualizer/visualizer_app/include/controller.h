@@ -50,7 +50,7 @@ public:
   void UpdateMotionFromInput(float delta);
 
   // Fastdds subscriber
-  subscriber::mocap_quadcopterSubscriber mysub;
+  mocap_quadcopterSubscriber mysub;
 };
 // } // namespace godot
 

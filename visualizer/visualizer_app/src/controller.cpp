@@ -34,19 +34,19 @@ void Controller::_process(float delta) {
 
 void Controller::UpdateMotionFromInput(float delta) {
 
-  if (subscriber::new_data == true) {
+  if (mocap_sub::new_data == true) {
 
     ///////////////////////////////////////////////////////////////////////////
     // Do godot processing here
 
-    position.x = subscriber::position[0] / 100;
-    position.z = subscriber::position[1] / 100;
-    position.y = subscriber::position[2] / 100;
+    position.x = mocap_sub::position[0] / 100;
+    position.z = mocap_sub::position[1] / 100;
+    position.y = mocap_sub::position[2] / 100;
 
-    q.x = subscriber::orientation[0];
-    q.y = subscriber::orientation[1];
-    q.z = subscriber::orientation[2];
-    q.w = subscriber::orientation[3];
+    q.x = mocap_sub::orientation[0];
+    q.y = mocap_sub::orientation[1];
+    q.z = mocap_sub::orientation[2];
+    q.w = mocap_sub::orientation[3];
 
     const float norm = sqrt(q.x * q.x + q.y * q.y + q.z * q.z);
     angle = 2 * atan2(norm, q.w);
@@ -58,7 +58,7 @@ void Controller::UpdateMotionFromInput(float delta) {
     ////////////////////////////////////////////////////////////
 
     // Set flag to false after data has been processed
-    subscriber::new_data = false;
+    mocap_sub::new_data = false;
   }
 
   else {
