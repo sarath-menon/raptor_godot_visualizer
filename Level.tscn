@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/Controller.gdns" type="Script" id=1]
 [ext_resource path="res://envs/test_env.tres" type="Environment" id=2]
-[ext_resource path="res://Assets/Crate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/crate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/hummingbird.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=1]
@@ -12,12 +12,12 @@ extents = Vector3( 15, 1, 15 )
 size = Vector3( 30, 2, 30 )
 
 [sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.423529, 0.85098, 0.180392, 1 )
+albedo_color = Color( 0.14902, 0.219608, 0.109804, 1 )
 
 [sub_resource type="BoxShape" id=4]
 
 [node name="Level" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00216913, -0.024817, 0.0166826 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.017 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 2 )
@@ -29,7 +29,7 @@ transform = Transform( 3.9775, 0, 0, 0, 0.994375, 0, 0, 0, 3.9775, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="floor"]
-transform = Transform( 0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, 1.87869, -15.6816, -1.43877 )
+transform = Transform( 0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 0, -15.682, 0 )
 use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
@@ -41,7 +41,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.98 )
 transform = Transform( 0.819151, -0.381314, 0.428475, 0, 0.747021, 0.6648, -0.573577, -0.544572, 0.611924, 10.75, 14.8, -8.77 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -1, 9.05942e-14, -8.74228e-08, -2.30096e-08, 0.964741, 0.2632, 8.43404e-08, 0.2632, -0.964741, 10.6583, 16.7608, -17.7631 )
+transform = Transform( -4.37114e-08, 0.685869, -0.727725, 0, 0.727725, 0.685869, 1, 2.99803e-08, -3.18099e-08, -28.9167, 37.0703, 0.868696 )
 current = true
 
 [node name="Spatial" type="Spatial" parent="."]

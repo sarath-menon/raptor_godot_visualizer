@@ -55,6 +55,8 @@ void Controller::UpdateMotionFromInput(float delta) {
     axis.z = q.y / sqrt(1 - q.w * q.w);
     axis.y = q.z / sqrt(1 - q.w * q.w);
 
+    axis.normalize();
+
     ////////////////////////////////////////////////////////////
 
     // Set flag to false after data has been processed
