@@ -3,5 +3,6 @@
         "__node_handle": "cpp",
         "*.idl": "cpp",
         "ios": "cpp"
-    }
+    },
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }

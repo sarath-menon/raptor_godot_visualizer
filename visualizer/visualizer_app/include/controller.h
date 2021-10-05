@@ -14,7 +14,6 @@
 #include <fastdds/dds/subscriber/SampleInfo.hpp>
 /////////////////////////////////////////////////////////////////////////
 
-// namespace godot {
 class Controller : public godot::Spatial {
 private:
   // We need to register some information to Godot
@@ -34,9 +33,6 @@ public:
   // Describe what happens in the simulation
   void _process(float delta);
 
-  // Member fields
-  const float friction_coeff = 0.9;
-
   godot::Vector3 position = godot::Vector3(0.0, 0.0, 0.0);
   godot::Vector3 orientation = godot::Vector3(0.0, 0.0, 0.0);
 
@@ -49,9 +45,11 @@ public:
   // Member functions
   void UpdateMotionFromInput(float delta);
 
+  // Scaling factor to adjust real world vs sim distance
+  constexpr static float scaling_factor = 4;
+
   // Fastdds subscriber
   mocap_quadcopterSubscriber mysub;
 };
-// } // namespace godot
 
 #endif // GDNATIVEEXPLORATION_CONTROLLER_H

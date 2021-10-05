@@ -39,9 +39,9 @@ void Controller::UpdateMotionFromInput(float delta) {
     ///////////////////////////////////////////////////////////////////////////
     // Do godot processing here
 
-    position.x = mocap_sub::position[0] / 100;
-    position.z = mocap_sub::position[1] / 100;
-    position.y = mocap_sub::position[2] / 100;
+    position.x = mocap_sub::position[0] * scaling_factor;
+    position.z = mocap_sub::position[1] * scaling_factor;
+    position.y = mocap_sub::position[2] * scaling_factor;
 
     q.x = mocap_sub::orientation[0];
     q.y = mocap_sub::orientation[1];
