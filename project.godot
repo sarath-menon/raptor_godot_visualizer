@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=1280
+window/size/width=1080
 window/size/height=720
 window/size/resizable=false
 
@@ -58,10 +58,17 @@ yaw={
  ]
 }
 
+[memory]
+
+limits/multithreaded_server/rid_pool_prealloc=120
+limits/message_queue/max_size_kb=8000
+limits/command_queue/multithreading_queue_size_kb=500
+
 [physics]
 
 common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/filters/msaa=2
 #environment/default_environment="res://default_env.tres"

@@ -2,8 +2,8 @@
 
 [ext_resource path="res://scripts/Controller.gdns" type="Script" id=1]
 [ext_resource path="res://envs/test_env.tres" type="Environment" id=2]
-[ext_resource path="res://Assets/crate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/hummingbird.tscn" type="PackedScene" id=4]
+[ext_resource path="res://imports/aruco_on_box.gltf" type="PackedScene" id=5]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 15, 1, 15 )
@@ -12,7 +12,7 @@ extents = Vector3( 15, 1, 15 )
 size = Vector3( 30, 2, 30 )
 
 [sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.14902, 0.219608, 0.109804, 1 )
+albedo_color = Color( 0.152941, 0.772549, 0.356863, 1 )
 
 [sub_resource type="BoxShape" id=4]
 
@@ -28,28 +28,25 @@ transform = Transform( 3.9775, 0, 0, 0, 0.994375, 0, 0, 0, 3.9775, 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="floor"]
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="floor"]
-transform = Transform( 0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 0, -15.682, 0 )
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.819151, -0.381314, 0.428475, 0, 0.747021, 0.6648, -0.573577, -0.544572, 0.611924, 10.75, 14.8, -8.77 )
+light_energy = 1.15
+light_indirect_energy = 0.0
+light_specular = 0.0
+light_bake_mode = 0
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 3.97748, 0, 0, 0, 0.994371, 0, 0, 0, 3.97748, -3.36023, -11.7882, 0.550591 )
 use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
-[node name="Crate" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.98 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.819151, -0.381314, 0.428475, 0, 0.747021, 0.6648, -0.573577, -0.544572, 0.611924, 10.75, 14.8, -8.77 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( -4.37114e-08, 0.685869, -0.727725, 0, 0.727725, 0.685869, 1, 2.99803e-08, -3.18099e-08, -28.9167, 37.0703, 0.868696 )
-current = true
-
 [node name="Spatial" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 10, 20 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 10, 0.30616 )
 script = ExtResource( 1 )
 
 [node name="hummingbird" parent="Spatial" instance=ExtResource( 4 )]
-transform = Transform( 5.85792, 0, 0, 0, 5.85, 0, 0, 0, 5.84973, 0, 0, 0 )
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Spatial/hummingbird"]
 transform = Transform( 1, 0, 1.50996e-07, 0, -0.217969, 0, -1.50996e-07, 0, 1, -0.000838757, -0.0102565, -0.00476122 )
@@ -59,4 +56,39 @@ shape = SubResource( 4 )
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -1.35733 )
 
 [node name="drone_camera" type="Camera" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 0.949852, 0.3127, 0, -0.3127, 0.949852, -0.0530005, -0.5, 0 )
+transform = Transform( 1, -8.35187e-23, -4.37114e-08, 4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, -0.0530005, -1.07055, 0 )
+current = true
+
+[node name="Control" type="Control" parent="."]
+visible = false
+margin_right = 600.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewportContainer" type="ViewportContainer" parent="Control"]
+margin_right = 600.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Control/ViewportContainer"]
+size = Vector2( 600, 300 )
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="Label" type="Label" parent="Control/ViewportContainer/Viewport"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 80.0
+margin_bottom = 54.0
+
+[node name="Camera" type="Camera" parent="Control/ViewportContainer/Viewport"]
+transform = Transform( -4.37114e-08, 0.685869, -0.727725, 0, 0.727725, 0.685869, 1, 2.99803e-08, -3.18099e-08, -28.9167, 37.0703, 0.885696 )
+visible = false
+current = true
+
+[node name="aruco_on_box" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0904408, 0, 10.9355 )

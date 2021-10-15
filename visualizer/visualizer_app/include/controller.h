@@ -2,16 +2,27 @@
 #define GDNATIVEEXPLORATION_CONTROLLER_H
 
 #include <Godot.hpp>
+#include <Image.hpp>
 #include <Input.hpp>
 #include <KinematicBody.hpp>
-
+#include <Label.hpp>
+#include <PoolArrays.hpp>
+#include <SceneTree.hpp>
+#include <String.hpp>
+#include <Viewport.hpp>
+#include <ViewportTexture.hpp>
 ///////////////////////////////////////////////////////////////////////////
 
-// Fastdds headers
-#include "mocap_quadcopterPubSubTypes.h"
-#include "mocap_quadcopterSubscriber.h"
-#include <fastdds/dds/subscriber/DataReader.hpp>
-#include <fastdds/dds/subscriber/SampleInfo.hpp>
+// Non-godot headers
+
+#include "geometry_msgs/msgs/Position.h"
+#include "mocap_sub_callback.h"
+#include "sensor_msgs/msgs/ImageHd.h"
+#include "visualizer_publisher.h"
+#include <array>
+#include <chrono>
+#include <future>
+#include <sys/types.h>
 /////////////////////////////////////////////////////////////////////////
 
 class Controller : public godot::Spatial {
@@ -19,9 +30,6 @@ private:
   // We need to register some information to Godot
   GODOT_CLASS(Controller, Spatial)
 public:
-  // Controller() {}
-  // ~Controller() {}
-
   Controller();
   ~Controller();
 
@@ -49,7 +57,17 @@ public:
   constexpr static float scaling_factor = 4;
 
   // Fastdds subscriber
-  mocap_quadcopterSubscriber mysub;
+  DDSSubscriber mocap_sub;
+  // Create publisher with msg type
+
+  DDSPublisher image_pub;
+  ImageHD st;
+
+  // Image pointer
+  constexpr static int img_size = 1080 * 720 * 3;
+
+  // // Async future return (used only for asynchronous publishing)
+  // std::future<void> status;
 };
 
 #endif // GDNATIVEEXPLORATION_CONTROLLER_H
