@@ -1,6 +1,8 @@
 #ifndef GDNATIVEEXPLORATION_CONTROLLER_H
 #define GDNATIVEEXPLORATION_CONTROLLER_H
 
+#include "GDNative.hpp"
+#include "PoolArrays.hpp"
 #include <Godot.hpp>
 #include <Image.hpp>
 #include <Input.hpp>
@@ -15,10 +17,12 @@
 
 // Non-godot headers
 
+#include "ImageHDPubSubTypes.h"
+#include "default_participant.h"
+#include "default_publisher.h"
+#include "default_subscriber.h"
 #include "geometry_msgs/msgs/Position.h"
 #include "mocap_sub_callback.h"
-#include "sensor_msgs/msgs/ImageHd.h"
-#include "visualizer_publisher.h"
 #include <array>
 #include <chrono>
 #include <future>
@@ -56,15 +60,18 @@ public:
   // Scaling factor to adjust real world vs sim distance
   constexpr static float scaling_factor = 4;
 
-  // Fastdds subscriber
-  DDSSubscriber mocap_sub;
-  // Create publisher with msg type
-
-  DDSPublisher image_pub;
-  ImageHD st;
-
   // Image pointer
   constexpr static int img_size = 1080 * 720 * 3;
+
+  // Create doamin participant
+  DefaultParticipant *dp;
+
+  // Image publisher
+  DDSPublisher *image_pub;
+  ImageHD st;
+
+  // Motion capture data subscriber
+  DDSSubscriber *mocap_sub;
 
   // // Async future return (used only for asynchronous publishing)
   // std::future<void> status;

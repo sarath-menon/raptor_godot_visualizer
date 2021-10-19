@@ -1,6 +1,6 @@
 #pragma once
 #include "MocapPubSubTypes.h"
-#include "visualizer_subscriber.h"
+#include "default_subscriber.h"
 #include "sensor_msgs/msgs/Mocap.h"
 
 namespace sub {
@@ -8,8 +8,9 @@ inline msgs::Mocap st;
 inline bool new_data_flag{false};
 } // namespace sub
 
-inline void DDSSubscriber::SubListener::on_data_available(DataReader *reader) {
-  SampleInfo info;
+inline void DDSSubscriber::SubListener::on_data_available(
+    eprosima::fastdds::dds::DataReader *reader) {
+  eprosima::fastdds::dds::SampleInfo info;
 
   if (reader->take_next_sample(&sub::st, &info) == ReturnCode_t::RETCODE_OK) {
     if (info.valid_data) {
@@ -25,7 +26,6 @@ inline void DDSSubscriber::SubListener::on_data_available(DataReader *reader) {
         lock.unlock();
       }
       cv.notify_one();
-
     }
   }
 }

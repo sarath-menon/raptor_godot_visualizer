@@ -1,19 +1,36 @@
 #include "controller.h"
-#include "GDNative.hpp"
-#include "PoolArrays.hpp"
+#include "default_participant.h"
 #include <cstddef>
 #include <future>
 using namespace godot;
 #include <cmath>
 
 Controller::Controller() {
-  // initialize mccap data subscriber
-  mocap_sub.init();
-  // Initialize image epublisher
-  image_pub.init();
+
+  // Create domain participant
+  dp = new DefaultParticipant(0, "opencv_demo_qos");
+
+  // Create  publisher
+  image_pub =
+      new DDSPublisher(ImageHDPubSubType(), "sim_img", dp->participant());
+
+  // Create  subscriber
+  mocap_sub =
+      new DDSSubscriber(MocapPubSubType(), "mocap_pose", dp->participant());
+
+  // Initialize publisher
+  image_pub->init();
+
+  // initialize  subscriber
+  mocap_sub->init();
 }
 
-Controller::~Controller(){};
+Controller::~Controller() {
+
+  delete image_pub;
+  delete mocap_sub;
+  delete dp;
+};
 
 void Controller::_init() { position = Vector3(10, 10, 20); }
 
@@ -37,9 +54,9 @@ void Controller::UpdateMotionFromInput(float delta) {
   // Lock until read and write are completed
 
   { // wait for the subscriber
-    std::unique_lock<std::mutex> lk(mocap_sub.listener.m);
-    mocap_sub.listener.cv.wait_for(lk, std::chrono::milliseconds(250),
-                                   [] { return sub::new_data_flag; });
+    std::unique_lock<std::mutex> lk(mocap_sub->listener.m);
+    mocap_sub->listener.cv.wait_for(lk, std::chrono::milliseconds(250),
+                                    [] { return sub::new_data_flag; });
 
     sub::new_data_flag = false;
 
@@ -87,12 +104,12 @@ void Controller::UpdateMotionFromInput(float delta) {
   }
 
   // Publish synchronously
-  image_pub.publish(&st);
+  image_pub->publish(st);
 
   // // Publish asynchronously
   // status =
-  //     std::async(std::launch::async, &DDSPublisher::publish, &image_pub,
-  //     &st);
+  //     std::async(std::launch::async, &DDSPublisher::publish, image_pub,
+  //     st);
 
   ////////////////////////////////////////////////////////////
 
