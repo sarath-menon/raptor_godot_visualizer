@@ -2,34 +2,44 @@
 #include "default_participant.h"
 #include <cstddef>
 #include <future>
+#include <memory>
 using namespace godot;
 #include <cmath>
 
 Controller::Controller() {
 
   // Create domain participant
-  dp = new DefaultParticipant(0, "opencv_demo_qos");
+  dp = std::make_shared<DefaultParticipant>(0, "godot_visualizer_qos");
+  // dp = new DefaultParticipant(0, "opencv_demo_qos");
 
   // Create  publisher
-  image_pub =
-      new DDSPublisher(ImageHDPubSubType(), "sim_img", dp->participant());
+  image_pub = new VideoPublisher(idl_msg::Image720pPubSubType(), "sim_img",
+                                 dp->participant());
 
   // Create  subscriber
-  mocap_sub =
-      new DDSSubscriber(MocapPubSubType(), "mocap_pose", dp->participant());
+  mocap_sub = new DDSSubscriber(idl_msg::MocapPubSubType(), &sub::mocap_msg,
+                                "mocap_pose", dp->participant());
+
+  // // Create  publisher
+  // image_pub_ = std::make_unique<DDSPublisher>(ImageHDPubSubType(), "sim_img",
+  //                                             dp->participant());
+
+  // // Create  subscriber
+  // mocap_sub = std::make_unique<DDSSubscriber>(MocapPubSubType(),
+  // "mocap_pose",
+  //                                             dp->participant());
 
   // Initialize publisher
   image_pub->init();
 
-  // initialize  subscriber
+  // initialize  subscriberDefaultParticipant
   mocap_sub->init();
 }
 
 Controller::~Controller() {
-
+  // delete dp;
   delete image_pub;
   delete mocap_sub;
-  delete dp;
 };
 
 void Controller::_init() { position = Vector3(10, 10, 20); }
@@ -53,22 +63,23 @@ void Controller::UpdateMotionFromInput(float delta) {
 
   // Lock until read and write are completed
 
-  { // wait for the subscriber
-    std::unique_lock<std::mutex> lk(mocap_sub->listener.m);
-    mocap_sub->listener.cv.wait_for(lk, std::chrono::milliseconds(250),
-                                    [] { return sub::new_data_flag; });
+  // wait for the subscriber
+  // std::unique_lock<std::mutex> lk(mocap_sub->listener->m);
+  // mocap_sub->listener->cv.wait_for(lk, std::chrono::milliseconds(250),
+  //                                  [] { return sub::new_data_flag; });
 
-    sub::new_data_flag = false;
+  // sub::new_data_flag = false;
 
-    position.x = sub::st.pose.position.x * scaling_factor;
-    position.z = sub::st.pose.position.y * scaling_factor;
-    position.y = sub::st.pose.position.z * scaling_factor;
+  mocap_sub->listener->wait_for_data();
 
-    q.x = sub::st.pose.orientation_quat.x;
-    q.y = sub::st.pose.orientation_quat.y;
-    q.z = sub::st.pose.orientation_quat.z;
-    q.w = sub::st.pose.orientation_quat.w;
-  }
+  position.x = sub::mocap_msg.pose.position.x * scaling_factor;
+  position.z = sub::mocap_msg.pose.position.y * scaling_factor;
+  position.y = sub::mocap_msg.pose.position.z * scaling_factor;
+
+  q.x = sub::mocap_msg.pose.orientation_quat.x;
+  q.y = sub::mocap_msg.pose.orientation_quat.y;
+  q.z = sub::mocap_msg.pose.orientation_quat.z;
+  q.w = sub::mocap_msg.pose.orientation_quat.w;
 
   // Do godot processing here
   const float norm = sqrt(q.x * q.x + q.y * q.y + q.z * q.z);

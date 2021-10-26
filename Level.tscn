@@ -85,10 +85,10 @@ margin_top = 40.0
 margin_right = 80.0
 margin_bottom = 54.0
 
-[node name="Camera" type="Camera" parent="Control/ViewportContainer/Viewport"]
-transform = Transform( -4.37114e-08, 0.685869, -0.727725, 0, 0.727725, 0.685869, 1, 2.99803e-08, -3.18099e-08, -28.9167, 37.0703, 0.885696 )
-visible = false
-current = true
-
 [node name="aruco_on_box" parent="." instance=ExtResource( 5 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0904408, 0, 10.9355 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-08, 0.685869, -0.727725, 0, 0.727725, 0.685869, 1, 2.99803e-08, -3.18099e-08, -28.9167, 37.0703, 0.868696 )
+visible = false
+current = true

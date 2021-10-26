@@ -1,33 +1,7 @@
 #ifndef GDNATIVEEXPLORATION_CONTROLLER_H
 #define GDNATIVEEXPLORATION_CONTROLLER_H
 
-#include "GDNative.hpp"
-#include "PoolArrays.hpp"
-#include <Godot.hpp>
-#include <Image.hpp>
-#include <Input.hpp>
-#include <KinematicBody.hpp>
-#include <Label.hpp>
-#include <PoolArrays.hpp>
-#include <SceneTree.hpp>
-#include <String.hpp>
-#include <Viewport.hpp>
-#include <ViewportTexture.hpp>
-///////////////////////////////////////////////////////////////////////////
-
-// Non-godot headers
-
-#include "ImageHDPubSubTypes.h"
-#include "default_participant.h"
-#include "default_publisher.h"
-#include "default_subscriber.h"
-#include "geometry_msgs/msgs/Position.h"
-#include "mocap_sub_callback.h"
-#include <array>
-#include <chrono>
-#include <future>
-#include <sys/types.h>
-/////////////////////////////////////////////////////////////////////////
+#include "include_helper.h"
 
 class Controller : public godot::Spatial {
 private:
@@ -61,17 +35,21 @@ public:
   constexpr static float scaling_factor = 4;
 
   // Image pointer
-  constexpr static int img_size = 1080 * 720 * 3;
+  constexpr static int img_size = 1280 * 720 * 3;
 
   // Create doamin participant
-  DefaultParticipant *dp;
+  std::shared_ptr<DefaultParticipant> dp;
+  // DefaultParticipant *dp;
 
   // Image publisher
-  DDSPublisher *image_pub;
-  ImageHD st;
+  // std::unique_ptr<DDSPublisher> image_pub_;
+  VideoPublisher *image_pub;
+
+  idl_msg::Image720p st;
 
   // Motion capture data subscriber
-  DDSSubscriber *mocap_sub;
+  // std::unique_ptr<DDSSubscriber> mocap_sub;
+  DDSSubscriber<idl_msg::MocapPubSubType, cpp_msg::Mocap> *mocap_sub;
 
   // // Async future return (used only for asynchronous publishing)
   // std::future<void> status;
