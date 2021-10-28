@@ -76,8 +76,8 @@ void Controller::UpdateMotionFromInput(float delta) {
   position.z = sub::mocap_msg.pose.position.y * scaling_factor;
   position.y = sub::mocap_msg.pose.position.z * scaling_factor;
 
-  q.x = sub::mocap_msg.pose.orientation_quat.x;
-  q.y = sub::mocap_msg.pose.orientation_quat.y;
+  q.x = -sub::mocap_msg.pose.orientation_quat.x;
+  q.y = -sub::mocap_msg.pose.orientation_quat.y;
   q.z = sub::mocap_msg.pose.orientation_quat.z;
   q.w = sub::mocap_msg.pose.orientation_quat.w;
 
@@ -114,8 +114,8 @@ void Controller::UpdateMotionFromInput(float delta) {
     img->unlock();
   }
 
-  // Publish synchronously
-  image_pub->publish(st);
+  // // Publish synchronously
+  // image_pub->publish(st);
 
   // // Publish asynchronously
   // status =
